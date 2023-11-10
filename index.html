@@ -1,39 +1,21 @@
 <!DOCTYPE html>
-<!-- saved from url=(0028)http://localhost/stockguard/ -->
-<html lang="pt-br"><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<html>
+<head>
     <title>StockGuard</title>
-    <link href="./StockGuard_files/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-<script src="chrome-extension://nngceckbapebfimnlniiiahkandclblb/content/fido2/page-script.js"></script></head>
+</head>
 
-<body style="">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNav" aria-controls="offcanvasNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <a class="navbar-brand" href="http://localhost/stockguard/#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNav" aria-controls="offcanvasNav">StockGuard</a>
-        </div>
-    </nav>
+<body>
+    <h1>StockGuard - Sistema de Gerenciamento de Estoque</h1>
 
-    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNav" aria-labelledby="offcanvasNavLabel" style="visibility: hidden;" aria-hidden="true">
-        <div class="offcanvas-header">
-            <h5 class="offcanvas-title" id="offcanvasNavLabel">StockGuard Menu</h5>
-            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-        </div>
-        <div class="offcanvas-body">
-            <ul class="list-group">
-                <li class="list-group-item"><a href="http://localhost/stockguard/usuarios.php" class="text-decoration-none">Usuarios</a></li>
-                <li class="list-group-item"><a href="http://localhost/stockguard/produtos.php" class="text-decoration-none">Produtos</a></li>
-                <li class="list-group-item"><a href="http://localhost/stockguard/cliente.php" class="text-decoration-none">Clientes</a></li>
-                <li class="list-group-item"><a href="http://localhost/stockguard/almoxarifado.php" class="text-decoration-none">Almoxarifado</a></li>
-                <li class="list-group-item"><a href="http://localhost/stockguard/op.php" class="text-decoration-none">Ordens de Saida</a></li>
-            </ul>
-        </div>
-    </div>
+    <!-- Menu de Navegação -->
+    <ul>
+        <li><a href="usuarios.php">CRUD de Usuarios</a></li>
+        <li><a href="produtos.php">CRUD de Produtos</a></li>
+        <li><a href="cliente.php">CRUD de Clientes</a></li>
+        <li><a href="almoxarifado.php">CRUD de Almoxarifado</a></li>
+        <li><a href="op.php">CRUD das Ordens de producao</a></li>
+    </ul>
 
-    <script src="./StockGuard_files/jquery.min.js.download"></script>
-    <script src="./StockGuard_files/popper.min.js.download"></script>
-    <script src="./StockGuard_files/bootstrap.min.js.download"></script>
-
-
-</body></html>
+    <h2>Escolha uma opcao no menu acima para comecar.</h2>
+</body>
+</html>
