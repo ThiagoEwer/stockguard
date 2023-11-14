@@ -1,4 +1,4 @@
-<h1>CRUD de Clientes</h1>
+<h1>Operações do Cliente</h1>
 
 <!-- Formulário para Inserir Cliente -->
 <h2>Inserir Cliente</h2>
