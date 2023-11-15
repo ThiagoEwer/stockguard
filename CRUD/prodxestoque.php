@@ -1,50 +1,47 @@
-
 <?php
-/*
-//verificar como incluir essa tabela na card de estoque atual
-
 include_once("../ADMIN/config.inc.php");
 
-// Executar a query
-$query = "SELECT p.CODIGO AS CODIGO_PRODUTO,
-                 p.NOME AS NOME_PRODUTO,
-                 a.LOCAL_ARM AS LOCAL_ARMAZENADO,
-                 p.QUANTIDADE AS QUANTIDADE_PRODUTO,
-                 p.VALIDADE AS DATA_VENCIMENTO
-          FROM produtos p
-          JOIN almoxarifado a ON p.CODIGO = a.COD_PROD";
+try {
+    // Consulta SQL
+    $consulta = $conn->query("SELECT p.CODIGO AS CODIGO_PRODUTO,
+                                    p.NOME AS NOME_PRODUTO,
+                                    a.LOCAL_ARM AS LOCAL_ARMAZENADO,
+                                    p.QUANTIDADE AS QUANTIDADE_PRODUTO,
+                                    p.VALIDADE AS DATA_VENCIMENTO
+                             FROM produtos p
+                             JOIN almoxarifado a ON p.CODIGO = a.COD_PROD");
 
-$result = $conn->query($query);
+    $resultados = $consulta->fetchAll(PDO::FETCH_ASSOC);
 
-// Verificar se a query retornou resultados
-if ($result->num_rows > 0) {
-    // Exibir a tabela
-    echo '<table class="table">
-            <thead>
-                <tr>
-                    <th>Código</th>
-                    <th>Nome do Produto</th>
-                    <th>Local Armazenado</th>
-                    <th>Quantidade</th>
-                    <th>Data de Vencimento</th>
-                </tr>
-            </thead>
-            <tbody>';
+    if (count($resultados) > 0) {
+        echo "<table border='1'>";
+        echo "<thead>";
+        echo "<tr>";
+        echo "<th>Código do Produto</th>";
+        echo "<th>Nome do Produto</th>";
+        echo "<th>Local Armazenado</th>";
+        echo "<th>Quantidade em Estoque</th>";
+        echo "<th>Data de Validade</th>";
+        echo "</tr>";
+        echo "</thead>";
+        echo "<tbody>";
 
-    // Loop pelos resultados e exibir cada linha da tabela
-    while ($row = $result->fetch_assoc()) {
-        echo '<tr>
-                <td>' . $row['CODIGO_PRODUTO'] . '</td>
-                <td>' . $row['NOME_PRODUTO'] . '</td>
-                <td>' . $row['LOCAL_ARMAZENADO'] . '</td>
-                <td>' . $row['QUANTIDADE_PRODUTO'] . '</td>
-                <td>' . $row['DATA_VENCIMENTO'] . '</td>
-              </tr>';
+        foreach ($resultados as $resultado) {
+            echo "<tr>";
+            echo "<td>" . $resultado['CODIGO_PRODUTO'] . "</td>";
+            echo "<td>" . $resultado['NOME_PRODUTO'] . "</td>";
+            echo "<td>" . $resultado['LOCAL_ARMAZENADO'] . "</td>";
+            echo "<td>" . $resultado['QUANTIDADE_PRODUTO'] . "</td>";
+            echo "<td>" . $resultado['DATA_VENCIMENTO'] . "</td>";
+            echo "</tr>";
+        }
+
+        echo "</tbody>";
+        echo "</table>";
+    } else {
+        echo "<p>Nenhum produto encontrado no estoque.</p>";
     }
-
-    echo '</tbody></table>';
-} else {
-    echo 'Nenhum resultado encontrado.';
+} catch (PDOException $e) {
+    echo "Erro na conexão: " . $e->getMessage();
 }
-*/
 ?>
