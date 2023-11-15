@@ -97,12 +97,10 @@
         </div>
         <div class="row">
             <div class="col-xl-6">
-                <div class="card mb-4">
-                    <div class="card-header">
-                        <i class="fas fa-chart-area me-1"></i>
-                        PRODUTOS CADASTRADOS
+                <div class="">
+                    <div>
+                        <iframe id="iframeTabProdVencendo" src="SQL/prod_vencendo.php" width="100%" height="400px" frameborder="0"></iframe>
                     </div>
-                    <div class="card-body"><canvas id="myAreaChart" width="100%" height="40"></canvas></div>
                 </div>
             </div>
             <div class="col-xl-6">
@@ -118,11 +116,17 @@
         <div class="card mb-4">
             <div class="card-header">
                 <i class="fas fa-table me-1"></i>
-                ESTOQUE ATUAL
+                <row>ESTOQUE ATUAL
+                    <!-- Criar a funação atualizar tabela (THIAGO)-->
+                    <button class="btn btn-outline-primary" onclick="atualizarTabela()">
+                        <i class="fas fa-sync-alt"></i>Atualizar
+                    </button>
+                </row>
             </div>
             <div class="card-body">
-              <a>aqui vai entrar uma tabela de uma consulta no banco trazendo os itens cadastrados no estoque junto com o seu saldo e local de armazenamento </a>
-          <!-- Aqui vai a tabela com a query criada prodxestoque -->
+                    <iframe src="SQL/estoque_atual.php" width="100%" height="400px" frameborder="0"></iframe>
+
+                </li>
             </div>
         </div>
     </div>
@@ -137,7 +141,7 @@
  <footer class="py-4 bg-light mt-auto">
                     <div class="container-fluid px-4">
                         <div class="d-flex align-items-center justify-content-between small">
-                            <div class="text-muted">Copyright &copy; Your Website 2023</div>
+                            <div class="text-muted">Copyright &copy;STOCKGUARD INC</div>
                             <div>
                                 <a href="#">Privacy Policy</a>
                                 &middot;
