@@ -3,9 +3,9 @@
                         <div class="d-flex align-items-center justify-content-between small">
                             <div class="text-muted">Copyright &copy;STOCKGUARD INC</div>
                             <div>
-                                <a href="#">Privacy Policy</a>
+                                <a href="#">Política de Privacidade</a>
                                 &middot;
-                                <a href="#">Terms &amp; Conditions</a>
+                                <a href="#">Termos &amp; Condições</a>
                             </div>
                         </div>
                     </div>
