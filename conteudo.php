@@ -7,7 +7,10 @@
         <div class="row">
             <div class="col-xl-3 col-md-6">
                 <div class="card bg-primary text-white mb-4">
-                    <div class="card-body">ESTOQUE</div>
+                <div class="card-body d-flex align-items-center">
+                <i class="material-icons">shelves</i>
+                <span class="ms-2">ESTOQUE</span>
+            </div>
                     <div class="card-footer d-flex align-items-center justify-content-between">
                         <a class="small text-white stretched-link" href="#">Acesso rapido</a>
                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
@@ -16,7 +19,11 @@
             </div>
             <div class="col-xl-3 col-md-6">
                 <div class="card bg-warning text-white mb-4">
-                    <div class="card-body">CLIENTES</div>
+                    
+                <div class="card-body d-flex align-items-center">
+                <i class="material-icons">group</i>
+                <span class="ms-2">CLIENTES</span>
+            </div>
                     <div class="card-footer d-flex align-items-center justify-content-between">
                         <a class="small text-white stretched-link" href="#">Acesso rapido</a>
                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
@@ -25,7 +32,10 @@
             </div>
             <div class="col-xl-3 col-md-6">
                 <div class="card bg-success text-white mb-4">
-                    <div class="card-body">ORDENS DE SAIDA</div>
+                <div class="card-body d-flex align-items-center">
+                <i class="material-icons">local_shipping</i>
+                <span class="ms-2">ORDENS DE SAIDA</span>
+            </div>
                     <div class="card-footer d-flex align-items-center justify-content-between">
                         <a class="small text-white stretched-link" href="#">Acesso rapido</a>
                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
@@ -34,7 +44,10 @@
             </div>
             <div class="col-xl-3 col-md-6">
                 <div class="card bg-danger text-white mb-4">
-                    <div class="card-body">PRODUTOS</div>
+                <div class="card-body d-flex align-items-center">
+                <i class="material-icons">dns</i>
+                <span class="ms-2">PRODUTOS</span>
+            </div>
                     <div class="card-footer d-flex align-items-center justify-content-between">
                         <a class="small text-white stretched-link" href="#">Acesso rpido</a>
                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
