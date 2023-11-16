@@ -5,10 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <title>StockGuard</title>
-    <h2> hello</h2>
+    
     <!-- headbar -->
-    <!--add comentário-->
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
         <img src="https://static.vecteezy.com/system/resources/previews/029/901/757/original/carton-parcel-open-box-in-hands-shipping-delivery-symbol-gift-box-icon-stock-illustration-vector.jpg" alt="Bootstrap" width="30" height="24">
           <a class="navbar-brand" href="#">STOCKGUARD</a>
@@ -18,13 +17,13 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                <a class="nav-link active" aria-current="page" href="index.php">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="usuarios.html">Usuarios</a>
+                <a class="nav-link" href="usuarios.php">Usuarios</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="produtos.phps">Produtos</a>
+                <a class="nav-link" href="produtos.php">Produtos</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="cliente.php">Clientes</a>
