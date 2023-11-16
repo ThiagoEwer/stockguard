@@ -36,7 +36,7 @@
                 <div class="card bg-danger text-white mb-4">
                     <div class="card-body">PRODUTOS</div>
                     <div class="card-footer d-flex align-items-center justify-content-between">
-                        <a class="small text-white stretched-link" href="#">Acesso rápido</a>
+                        <a class="small text-white stretched-link" href="#">Acesso rpido</a>
                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                     </div>
                 </div>
@@ -61,15 +61,20 @@
             </div>
         </div>
         <div class="card mb-4">
-            <div class="card-header">
-                <i class="fas fa-table me-1"></i>
-                <row>ESTOQUE ATUAL
-                    <!-- Criar a funação atualizar tabela (THIAGO)-->
-                    <button class="btn btn-outline-primary" onclick="atualizarTabela()">
-                        <i class="fas fa-sync-alt"></i>Atualizar
-                    </button>
-                </row>
-            </div>
+        <div class="card mb-4">
+    <div class="card-header d-flex justify-content-between align-items-center">
+        <div>
+            <i class="fas fa-table me-1"></i>
+            ESTOQUE ATUAL
+        </div>
+        <!-- Criar a função atualizar tabela (THIAGO)-->
+        <button class="btn btn-outline-primary" onclick="atualizarTabela()">
+            <i class="fas fa-sync-alt"></i>Atualizar
+        </button>
+    </div>
+    <!-- Outros conteúdos da card aqui -->
+</div>
+
             <div class="card-body">
                     <iframe src="SQL/estoque_atual.php" width="100%" height="400px" frameborder="0"></iframe>
 
