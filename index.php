@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>Stock em php</title>
+        <title>Stockguard - Controle de Estoque</title>
          
        
     </head>
