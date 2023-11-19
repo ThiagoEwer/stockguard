@@ -7,14 +7,16 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <title>StockGuard</title>
     
+    
     <!-- headbar -->
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
-        <img src="https://static.vecteezy.com/system/resources/previews/029/901/757/original/carton-parcel-open-box-in-hands-shipping-delivery-symbol-gift-box-icon-stock-illustration-vector.jpg" alt="Bootstrap" width="30" height="24">
+        <img src="icons/logo.png" alt="Bootstrap" width="30" height="24">
           <a class="navbar-brand" href="#">STOCKGUARD</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
+          
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
@@ -40,11 +42,12 @@
                 <a class="nav-link disabled" aria-disabled="true">Sobre</a>
               </li>
             </ul>
-            <form class="d-flex" role="Procurar">
-              <input class="form-control me-2" type="search" placeholder="Procurar" aria-label="Search">
-          
-              <button class="btn btn-outline-success" type="submit"><i class="material-icons">search</i></button>
+
+            <!-- Alterar o processa_logout para a tela de login -->
+            <form action="processa_logout.php" method="post">
+            <input class="form-control me-2" type="submit" name="btnLogout" value="Sair" aria-label="Logout" style="background-color: red; color: white;">
             </form>
+
           </div>
         </div>
       </nav>

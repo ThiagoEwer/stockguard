@@ -13,6 +13,7 @@
             </div>
                     <div class="card-footer d-flex align-items-center justify-content-between">
                         <a class="small text-white stretched-link" href="#">Acesso rapido</a>
+                        
                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                     </div>
                 </div>
@@ -49,7 +50,7 @@
                 <span class="ms-2">PRODUTOS</span>
             </div>
                     <div class="card-footer d-flex align-items-center justify-content-between">
-                        <a class="small text-white stretched-link" href="#">Acesso rpido</a>
+                        <a class="small text-white stretched-link" href="#">Acesso rapido</a>
                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                     </div>
                 </div>
