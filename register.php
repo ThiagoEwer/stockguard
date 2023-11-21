@@ -1,3 +1,21 @@
+<?php 
+	if(isset($_POST['submit']));
+	{
+	include_once ('admin/config.inc.php');
+	if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["usuario"])) {
+		if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["senha"])) {
+			if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["email"])) {
+	$usuario = $_POST['usuario'];
+	$senha = $_POST['senha'];
+	$email = $_POST['email'];
+			
+	$result = mysqli_query($conn,"INSERT INTO clientes(usuario,senha,email)
+	VALUES ('$usuario','$senha','$email')");
+	}
+	}
+	}
+	}
+	?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -21,12 +39,12 @@
 					<div class="card shadow-lg">
 						<div class="card-body p-5">
 							<h1 class="fs-4 card-title fw-bold mb-4">Registre-se</h1>
-							<form method="POST" class="needs-validation" novalidate="" autocomplete="off">
+							<form action="register.php" method="POST" class="needs-validation" novalidate="" autocomplete="off">
 								<div class="mb-3">
-									<label class="mb-2 text-muted" for="name">Nome</label>
-									<input id="name" type="text" class="form-control" name="name" value="" required autofocus>
+									<label class="mb-2 text-muted" for="usuario">Usuário</label>
+									<input id="name" type="text" class="form-control" name="usuario" value="" required autofocus>
 									<div class="invalid-feedback">
-										Este nome é Inválido!	
+										Este Usuário é Inválido!	
 									</div>
 								</div>
 
@@ -39,8 +57,8 @@
 								</div>
 
 								<div class="mb-3">
-									<label class="mb-2 text-muted" for="password">Senha</label>
-									<input id="password" type="password" class="form-control" name="password" required>
+									<label class="mb-2 text-muted" for="senha">Senha</label>
+									<input id="password" type="password" class="form-control" name="senha" required>
 								    <div class="invalid-feedback">
 								    	Esta senha é Inválida!
 							    	</div>
@@ -59,7 +77,7 @@
 						</div>
 						<div class="card-footer py-3 border-0">
 							<div class="text-center">
-								Já tem uma conta ? <a href="index.html" class="text-dark">Login</a>
+								Já tem uma conta ? <a href="index.php" class="text-dark">Login</a>
 							</div>
 						</div>
 					</div>

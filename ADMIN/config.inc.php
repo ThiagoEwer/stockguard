@@ -1,18 +1,18 @@
 <?php
 $host = "localhost";
+$usuario = "root";
+$senha = "";
 $dbname = "stockguard";
-$username = "root";
-$password = "";
 
-$conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
+$conn = new mysqli($host, $usuario, $senha, $dbname);
 
-/* If de validação de conexão.
-if (is_object($conn)) {
-    echo "Conexão estabelecida com sucesso";
-} else {
-    echo "Houve algum erro na conexão";
+if ($conn->connect_errno) 
+{
+  echo "Error";
 }
-*/
-
+else
+{
+    echo "Conexão Efetuada com Sucesso";
+}
 ?>
 

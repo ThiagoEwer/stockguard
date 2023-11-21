@@ -32,14 +32,14 @@
 
 								<button class="btn-outline-danger">
 								<div class="d-flex align-items-center">
-										<a href="reset.html">Redefinir Senha</a>
+										<a href="reset.php">Redefinir Senha</a>
 								</div>
 							   </button>
 							</form>
 						</div>
 						<div class="card-footer py-3 border-0">
 							<div class="text-center">
-								Relembrar sua senha? <a href="index.html" class="text-dark">Login</a>
+								Relembrou sua senha? <a href="conteudo.php" class="text-dark">Login</a>
 							</div>
 						</div>
 					</div>
