@@ -20,7 +20,7 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="index.php">Início</a>
+                <a class="nav-link active" aria-current="page" href="pagina.php">Início</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="usuarios.php">Usuarios</a>
@@ -44,7 +44,7 @@
             </ul>
 
             <!-- Alterar o processa_logout para a tela de login -->
-            <form action="processa_logout.php" method="post">
+            <form action="conteudo.php" method="post">
             <input class="form-control me-2" type="submit" name="btnLogout" value="Sair" aria-label="Logout" style="background-color: red; color: white;">
             </form>
 
