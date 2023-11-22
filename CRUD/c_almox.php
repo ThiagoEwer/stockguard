@@ -37,9 +37,16 @@ if (isset($_POST["id"]) && isset($_POST["novoCodigo"]) && isset($_POST["novoLoca
     $estadoAlmox->bindParam(":novoTotalProd", $novoTotalProd);
 
     if ($estadoAlmox->execute()) {
-        echo "Item no Almoxarifado atualizado com sucesso!";
+        echo "<script>
+        alert('Item no Almoxarifado atualizado com sucesso!');
+        window.history.go(-1);
+    </script>";
+        
     } else {
-        echo "Erro ao atualizar o item no Almoxarifado.";
+        echo "<script>
+        alert('Erro ao atualizar o item no Almoxarifado.');
+        window.history.go(-1);
+    </script>";
     }
 }
 
@@ -51,9 +58,15 @@ if (isset($_POST["idExcluir"])) {
     $estadoAlmox->bindParam(":idExcluir", $idExcluir);
 
     if ($estadoAlmox->execute()) {
-        echo "Item do Almoxarifado excluído com sucesso!";
+        echo "<script>
+        alert('Item do Almoxarifado excluído com sucesso!');
+        window.history.go(-1);
+    </script>";
     } else {
-        echo "Erro ao excluir o item do Almoxarifado.";
+        echo "<script>
+        alert('Erro ao excluir o item do Almoxarifado.');
+        window.history.go(-1);
+    </script>";
     }
 }
 
@@ -73,7 +86,10 @@ if (isset($_GET["listar"])) {
             echo "<br>";
         }
     } else {
-        echo "Nenhum produto no almoxarifado, cadastre primeiro";
+        echo "<script>
+        alert('Nenhum produto no almoxarifado, cadastre primeiro');
+        window.history.go(-1);
+    </script>";
     }
 }
 

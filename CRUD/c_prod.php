@@ -19,9 +19,15 @@ if (isset($_POST["nome"]) && isset($_POST["tipo"]) && isset($_POST["quantidade"]
     $estadoPrd->bindParam(":validade", $validade);
 
     if ($estadoPrd->execute()) {
-        echo "Produto inserido com sucesso!";
+        echo "<script>
+        alert('Produto inserido com sucesso!');
+        window.history.go(-1);
+    </script>";
     } else {
-        echo "Erro ao inserir o produto.";
+        echo "<script>
+        alert('Erro ao inserir o produto.');
+        window.history.go(-1);
+    </script>";
     }
 }
 
@@ -45,9 +51,15 @@ if (isset($_POST["id"]) && isset($_POST["novoNome"]) && isset($_POST["novoTipo"]
     $estadoPrd->bindParam(":novaValidade", $novaValidade);
 
     if ($estadoPrd->execute()) {
-        echo "Produto atualizado com sucesso!";
+        echo "<script>
+        alert('Produto atualizado com sucesso!');
+        window.history.go(-1);
+    </script>";
     } else {
-        echo "Erro ao atualizar o produto.";
+        echo "<script>
+        alert('Erro ao atualizar o produto.');
+        window.history.go(-1);
+    </script>";
     }
 }
 
@@ -63,9 +75,15 @@ if (isset($_POST["idExcluir"])) {
     $estadoPrd->bindParam(":idExcluir", $idExcluir);
 
     if ($estadoPrd->execute()) {
-        echo "Produto excluído com sucesso!";
+        echo "<script>
+        alert('Produto excluído com sucesso!');
+        window.history.go(-1);
+    </script>";
     } else {
-        echo "Erro ao excluir o produto.";
+        echo "<script>
+        alert('Erro ao excluir o produto.');
+        window.history.go(-1);
+    </script>";
     }
 }
 
@@ -89,7 +107,10 @@ if (isset($_GET["listar"])) {
             echo "Validade: " . $produto['VALIDADE'] . "<br><br>";
         }
     } else {
-        echo "Nenhum produto encontrado.";
+        echo "<script>
+        alert('Nenhum produto encontrado.');
+        window.history.go(-1);
+    </script>";
     }
 }
 
