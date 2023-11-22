@@ -77,13 +77,24 @@ if (isset($_GET["listar"])) {
     $clientes = $estadoCli->fetchAll(PDO::FETCH_ASSOC);
 
     if ($clientes) {
-      
+        echo "<style>";
+        echo "    .cliente-info {";
+        echo "        background-color: #f0f0f0;";
+        echo "        padding: 10px;";
+        echo "        margin-bottom: 10px;";
+        echo "        border: 1px solid #000;";
+        echo "        border-radius: 3px;"; 
+        echo "    }";
+        echo "</style>";
+    
         foreach ($clientes as $cliente) {
+            // Adicionando a classe 'cliente-info' ao bloco de informações do cliente
+            echo "<div class='cliente-info'>";
             echo "ID: " . $cliente['ID'] . "<br>";
             echo "CNPJ/CPF: " . $cliente['CNPJ_CPF'] . "<br>";
             echo "Razão Social/Nome: " . $cliente['RAZAO_SOCIAL_NOME'] . "<br>";
             echo "CEP: " . $cliente['CEP'] . "<br>";
-            echo "<br>";
+            echo "</div>";
         }
     } else {
         echo "<script>

@@ -76,12 +76,28 @@ if (isset($_GET["listar"])) {
     $itens_almoxarifado = $estadoAlmox->fetchAll(PDO::FETCH_ASSOC);
 
     if (count($itens_almoxarifado) > 0) {
+
+        echo "<style>";
+        echo "    .almox-info {";
+        echo "        background-color: #f0f0f0;";
+        echo "        padding: 10px;";
+        echo "        margin-bottom: 10px;";
+        echo "        border: 1px solid #000;";
+        echo "        border-radius: 3px;"; 
+        echo "    }";
+        echo "</style>";
+
+
+
+
         foreach ($itens_almoxarifado as $item) {
+            echo "<div class='almox-info'>";
             echo "ID: " . $item['ID'] . "<br>";
             echo "Código: " . $item['CODIGO'] . "<br>";
             echo "Local de Armazenagem: " . $item['LOCAL_ARM'] . "<br>";
             echo "Código do Produto: " . $item['COD_PROD'] . "<br>";
             echo "Total de Produtos: " . $item['TOTAL_PROD'] . "<br>";
+            echo "</div>";
             echo "<br>";
         }
     } else {

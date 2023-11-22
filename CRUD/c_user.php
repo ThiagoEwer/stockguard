@@ -92,13 +92,26 @@ if (isset($_GET["listar"])) {
     $usuarios = $estadoUsu->fetchAll(PDO::FETCH_ASSOC);
 
     if (count($usuarios) > 0) {
-    
+            echo "<style>";
+            echo "    .user-info {";
+            echo "        background-color: #f0f0f0;";
+            echo "        padding: 10px;";
+            echo "        margin-bottom: 10px;";
+            echo "        border: 1px solid #000;";
+            echo "        border-radius: 3px;"; 
+            echo "    }";
+            echo "</style>";
+
+
         foreach ($usuarios as $usuario) {
+            echo "<div class='user-info'>";
             echo "ID: " . $usuario['ID'] . "<br>";
             echo "Nome: " . $usuario['NOMES'] . "<br>";
             echo "Email: " . $usuario['EMAIL'] . "<br>";
             echo "Telefone: " . $usuario['TELEFONE'] . "<br>";
+      
             echo "<br>";
+            echo "</div>";
         }
     } else {
         echo "<script>

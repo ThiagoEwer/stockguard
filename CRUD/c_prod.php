@@ -99,15 +99,31 @@ if (isset($_GET["listar"])) {
     $produtos = $estadoPrd->fetchAll(PDO::FETCH_ASSOC);
 
     if ($produtos) {
-   
+        echo "<style>";
+        echo "    .prod-info {";
+        echo "        background-color: #f0f0f0;";
+        echo "        padding: 10px;";
+        echo "        margin-bottom: 10px;";
+        echo "        border: 1px solid #000;";
+        echo "        border-radius: 3px;"; 
+        echo "    }";
+        echo "</style>";
+
+
+
+
+
         foreach ($produtos as $produto) {
+            echo "<div class='prod-info'>";
             echo "ID: " . $produto['ID'] . "<br>";
             echo "Código: " . $produto['CODIGO'] . "<br>"; // Novo campo
             echo "Nome: " . $produto['NOME'] . "<br>";
             echo "Tipo: " . $produto['TIPO'] . "<br>";
             echo "Quantidade: " . $produto['QUANTIDADE'] . "<br>";
             echo "Local: " . $produto['LOCAL'] . "<br>";
-            echo "Validade: " . $produto['VALIDADE'] . "<br><br>";
+            echo "Validade: " . $produto['VALIDADE'] . "
+            <br><br>";
+            echo "</div>";
         }
     } else {
         echo "<script>
