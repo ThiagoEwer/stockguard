@@ -92,7 +92,7 @@ if (isset($_GET["listar"])) {
     $usuarios = $estadoUsu->fetchAll(PDO::FETCH_ASSOC);
 
     if (count($usuarios) > 0) {
-        echo "<h2>Lista de Usuários:</h2>";
+    
         foreach ($usuarios as $usuario) {
             echo "ID: " . $usuario['ID'] . "<br>";
             echo "Nome: " . $usuario['NOMES'] . "<br>";
