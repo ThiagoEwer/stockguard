@@ -65,12 +65,9 @@
                 </div>
             </div>
             <div class="col-xl-6">
-                <div class="card mb-4">
-                    <div class="card-header">
-                        <i class="fas fa-chart-bar me-1"></i>
-                        ORDENS DE SAÍDA
-                    </div>
-                    <div class="card-body"><canvas id="myBarChart" width="100%" height="40"></canvas></div>
+                <!-- Incluindo a tabela de Ordens de Saída -->
+                <iframe id="iframeOrdensSaida" src="SQL/ordens_atuais.php" width="100%" height="400px" frameborder="0"></iframe>
+            </div>
                 </div>
             </div>
         </div>
@@ -96,9 +93,9 @@
             </div>
         </div>
     </div>
-     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
 
 </main>
