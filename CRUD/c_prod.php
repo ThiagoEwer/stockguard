@@ -99,7 +99,7 @@ if (isset($_GET["listar"])) {
     $produtos = $estadoPrd->fetchAll(PDO::FETCH_ASSOC);
 
     if ($produtos) {
-        echo "<h2>Lista de Produtos:</h2>";
+   
         foreach ($produtos as $produto) {
             echo "ID: " . $produto['ID'] . "<br>";
             echo "Código: " . $produto['CODIGO'] . "<br>"; // Novo campo

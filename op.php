@@ -59,6 +59,9 @@
                         <input type="text" class="form-control" name="cep_destino" required>
                     </div>
                     <button type="submit" class="btn btn-primary">Inserir</button>
+                    
+        <!-- Listar Ordens de Produção -->
+                    <a class="btn btn-success" href="CRUD/c_op.php?listar=1" data-toggle="modal" data-target="#modallistaop">Listar Odens de Produção</a>
                 </form>
             </div>
 
@@ -111,11 +114,32 @@
             </div>
         </div>
 
-        <!-- Listar Ordens de Produção -->
-        <h2 class="mt-4">Listar Ordens de Produção</h2>
-        <a href="CRUD/c_op.php?listar=1" class="btn btn-success">Listar Ordens de Produção</a>
+
 
     </div>
+
+
+    <div class="modal fade" id="modallistaop" tabindex="-1" role="dialog" aria-labelledby="modallistaopLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modallistaopLabel">Lista de Ordens de Produção:</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- Use um iframe para carregar a outra página -->
+                    <iframe src="CRUD/c_op.php?listar=1" style="width: 100%; height: 500px; border: none;"></iframe>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                    <!-- Adicione outros botões conforme necessário -->
+                </div>
+            </div>
+        </div>
+    </div>
+
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>

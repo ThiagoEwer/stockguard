@@ -54,6 +54,9 @@
                         <input type="number" class="form-control" name="total_prod" required>
                     </div>
                     <button type="submit" class="btn btn-primary">Inserir</button>
+                    
+        <!-- Listar Itens no Estoque -->
+                    <a class="btn btn-success" href="CRUD/c_almox.php?listar=1" data-toggle="modal" data-target="#modalamoxarifadolista">Listar Itens no Estoque</a>
                 </form>
             </div>
 
@@ -98,9 +101,29 @@
             </div>
         </div>
 
-        <!-- Listar Itens no Estoque -->
-        <h2 class="mt-4">Listar Itens no Estoque</h2>
-        <a href="CRUD/c_almox.php?listar=1" class="btn btn-success">Listar Itens no Estoque</a>
+
+      
+                    <!-- Modal almoxarifado-->
+        <div class="modal fade" id="modalamoxarifadolista" tabindex="-1" role="dialog" aria-labelledby="modalamoxarifadolistaLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalamoxarifadolistaLabel">Lista de Itens no Almoxarifado:</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- Use um iframe para carregar a outra página -->
+                    <iframe src="CRUD/c_almox.php?listar=1" style="width: 100%; height: 500px; border: none;"></iframe>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                    <!-- Adicione outros botões conforme necessário -->
+                </div>
+            </div>
+        </div>
+    </div>
 
     </div>
 
