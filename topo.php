@@ -44,11 +44,7 @@
             </ul>
 
             <!-- Alterar o processa_logout para a tela de login -->
-<<<<<<< HEAD
             <form action="index.php" method="post">
-=======
-            <form action="login.php" method="post">
->>>>>>> 9708994946a8ba90fc57a57e71a83ab40024b484
             <input class="form-control me-2" type="submit" name="btnLogout" value="Sair" aria-label="Logout" style="background-color: red; color: white;">
             </form>
 
