@@ -19,9 +19,15 @@ if (isset($_POST["codigo"]) && isset($_POST["cliente"]) && isset($_POST["produto
     $stmt->bindParam(":cep_destino", $cep_destino);
 
     if ($stmt->execute()) {
-        echo "Ordem de Produção inserida com sucesso!";
+        echo "<script>
+        alert('Ordem de Produção Inserida com sucesso!');
+        window.history.go(-1);
+    </script>";
     } else {
-        echo "Erro ao inserir a Ordem de Produção.";
+        echo "<script>
+        alert('Erro ao inserir a Ordem de Produção.');
+        window.history.go(-1);
+    </script>";
     }
 }
 
