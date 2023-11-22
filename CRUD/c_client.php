@@ -13,9 +13,15 @@ if (isset($_POST["cnpj_cpf"]) && isset($_POST["razao_social_nome"]) && isset($_P
     $estadoCli->bindParam(":cep", $cep);
 
     if ($estadoCli->execute()) {
-        echo "Cliente inserido com sucesso!";
+        echo "<script>
+        alert('Cliente inserido com sucesso!');
+        window.history.go(-1);
+    </script>";
     } else {
-        echo "Erro ao inserir o cliente.";
+        echo "<script>
+        alert('Erro ao inserir o cliente.');
+        window.history.go(-1);
+    </script>";
     }
 }
 
@@ -33,9 +39,15 @@ if (isset($_POST["id"]) && isset($_POST["novoCnpjCpf"]) && isset($_POST["novoRaz
     $estadoCli->bindParam(":novoCep", $novoCep);
 
     if ($estadoCli->execute()) {
-        echo "Cliente atualizado com sucesso!";
+        echo "<script>
+        alert('Cliente atualizado com sucesso!');
+        window.history.go(-1);
+    </script>";
     } else {
-        echo "Erro ao atualizar o cliente.";
+        echo "<script>
+        alert('Erro ao atualizar o cliente.');
+        window.history.go(-1);
+    </script>";
     }
 }
 
@@ -47,9 +59,15 @@ if (isset($_POST["idExcluir"])) {
     $estadoCli->bindParam(":idExcluir", $idExcluir);
 
     if ($estadoCli->execute()) {
-        echo "Cliente excluído com sucesso!";
+        echo "<script>
+        alert('Cliente excluído com sucesso!');
+        window.history.go(-1);
+    </script>";
     } else {
-        echo "Erro ao excluir o cliente.";
+        echo "<script>
+        alert('Erro ao excluir o cliente.');
+        window.history.go(-1);
+    </script>";
     }
 }
 
@@ -68,7 +86,10 @@ if (isset($_GET["listar"])) {
             echo "<br>";
         }
     } else {
-        echo "Nenhum cliente cadastrado, sua empresa vai falir sem clientes.";
+        echo "<script>
+        alert('Nenhum cliente cadastrado, sua empresa vai falir sem clientes.');
+        window.history.go(-1);
+    </script>";
     }
 }
 

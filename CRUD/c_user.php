@@ -18,9 +18,16 @@ if (isset($_POST["nome"]) && isset($_POST["email"])) {
     $estadoUsu->bindParam(":telefone", $telefone);
     // após tudo que for digitado, o metodo execute coloca as informações no banco, ou não.
     if ($estadoUsu->execute()) {
-        echo "Usuário inserido com sucesso!";
+        echo "<script>
+        alert('Usuário inserido com sucesso!');
+        window.history.go(-1);
+    </script>";
     } else {
-        echo "Erro ao inserir o usuário.";
+        echo "<script>
+        alert('Erro ao inserir o usuário.');
+        window.history.go(-1);
+    </script>";
+        
     }
 }
 
@@ -41,9 +48,16 @@ if (isset($_POST["id"]) && isset($_POST["novoNome"]) && isset($_POST["novoEmail"
     $estadoUsu->bindParam(":novoTelefone", $novoTelefone);
 
     if ($estadoUsu->execute()) {
-        echo "Usuário atualizado com sucesso!";
+        echo "<script>
+        alert('Usuário atualizado com sucesso!');
+        window.history.go(-1);
+    </script>";
+        
     } else {
-        echo "Erro ao atualizar o usuário.";
+        echo "<script>
+        alert('Erro ao atualizar o usuário.');
+        window.history.go(-1);
+    </script>";
     }
 }
 
@@ -58,9 +72,15 @@ if (isset($_POST["idExcluir"])) {
     $estadoUsu->bindParam(":idExcluir", $idExcluir);
 
     if ($estadoUsu->execute()) {
-        echo "Usuário excluído com sucesso!";
+        echo "<script>
+        alert('Usuário excluído com sucesso!');
+        window.history.go(-1);
+    </script>";
     } else {
-        echo "Erro ao excluir o usuário.";
+        echo "<script>
+        alert('Erro ao excluir o usuario');
+        window.history.go(-1);
+    </script>";
     }
 }
 
@@ -81,7 +101,10 @@ if (isset($_GET["listar"])) {
             echo "<br>";
         }
     } else {
-        echo "Nenhum usuário encontrado";
+        echo "<script>
+        alert('Nenhum usuário encontrado');
+        window.history.go(-1);
+    </script>";
     }
 }
 

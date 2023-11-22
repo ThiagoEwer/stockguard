@@ -45,9 +45,15 @@ if (isset($_POST["id"]) && isset($_POST["novoCodigo"]) && isset($_POST["novoClie
     $stmt->bindParam(":novoCepDestino", $novoCepDestino);
 
     if ($stmt->execute()) {
-        echo "Ordem de Produção atualizada com sucesso!";
+        echo "<script>
+        alert('Ordem de Produção atualizada com sucesso!');
+        window.history.go(-1);
+    </script>";
     } else {
-        echo "Erro ao atualizar a Ordem de Produção.";
+        echo "<script>
+        alert('Erro ao atualizar a Ordem de Produção.');
+        window.history.go(-1);
+    </script>";
     }
 }
 
@@ -59,9 +65,15 @@ if (isset($_POST["idExcluir"])) {
     $stmt->bindParam(":idExcluir", $idExcluir);
 
     if ($stmt->execute()) {
-        echo "Ordem de Produção excluída com sucesso!";
+        echo "<script>
+        alert('Ordem de Produção excluída com sucesso!');
+        window.history.go(-1);
+    </script>";
     } else {
-        echo "Erro ao excluir a Ordem de Produção.";
+        echo "<script>
+        alert('Erro ao excluir a Ordem de Produção.');
+        window.history.go(-1);
+    </script>";
     }
 }
 if (isset($_GET["listar"])) {
@@ -82,7 +94,10 @@ if (isset($_GET["listar"])) {
             echo "<br>";
         }
     } else {
-        echo "Nenhuma OP cadastrada, venda algo ou movimente seu estoque.";
+        echo "<script>
+        alert('Nenhuma OP cadastrada, venda algo ou movimente seu estoque.');
+        window.history.go(-1);
+    </script>";
     }
 }
 

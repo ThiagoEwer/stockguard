@@ -1,5 +1,0 @@
-- Galera, falta separar a estrutura do arquivo para .php 
-e separar a estrutura dos códigos, criando um menu e coloque o include do head e do footer em todos os códigos. 
-lembrando, tudo tem que estar em .php
-
-- Também falta fazer a documentação do projeto e colocar na pasta DOC.
