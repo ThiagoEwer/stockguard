@@ -88,7 +88,21 @@ if (isset($_GET["listar"])) {
     $ordens = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     if (count($ordens) > 0) {
+
+        echo "<style>";
+        echo "    .ordens-info {";
+        echo "        background-color: #f0f0f0;";
+        echo "        padding: 10px;";
+        echo "        margin-bottom: 10px;";
+        echo "        border: 1px solid #000;";
+        echo "        border-radius: 3px;"; 
+        echo "    }";
+        echo "</style>";
+    
+
+
         foreach ($ordens as $ordem) {
+            echo "<div class='ordens-info'>";
             echo "ID: " . $ordem['ID'] . "<br>";
             echo "Código: " . $ordem['CODIGO'] . "<br>";
             echo "Cliente: " . $ordem['CLIENTE'] . "<br>";
@@ -96,7 +110,9 @@ if (isset($_GET["listar"])) {
             echo "Quantidade: " . $ordem['QUANTIDADE'] . "<br>";
             echo "Local de Armazenagem: " . $ordem['LOCAL_ALMOX'] . "<br>";
             echo "CEP de Destino: " . $ordem['CEP_DESTINO'] . "<br>";
+            echo "</div>";
             echo "<br>";
+            
         }
     } else {
         echo "<script>
