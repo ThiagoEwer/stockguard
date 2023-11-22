@@ -37,6 +37,10 @@
                 <!-- Formulário de Inserir Produto -->
                 <form action="CRUD/c_prod.php" method="post">
                     <div class="form-group">
+                       <label for="codigo">Código:</label>
+                       <input type="text" class="form-control" name="codigo" required>
+                    </div>
+                    <div class="form-group">
                         <label for="nome">Nome:</label>
                         <input type="text" class="form-control" name="nome" required>
                     </div>
@@ -67,6 +71,10 @@
                     <div class="form-group">
                         <label for="id">ID do Produto:</label>
                         <input type="text" class="form-control" name="id" required>
+                    </div>
+                    <div class="form-group">
+                       <label for="novoCodigo">Código:</label>
+                       <input type="text" class="form-control" name="novoCodigo" required>
                     </div>
                     <div class="form-group">
                         <label for="novoNome">Novo Nome:</label>
