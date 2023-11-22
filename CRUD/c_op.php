@@ -88,7 +88,6 @@ if (isset($_GET["listar"])) {
     $ordens = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     if (count($ordens) > 0) {
-        echo "<h2>Lista de Ordens de Produção:</h2>";
         foreach ($ordens as $ordem) {
             echo "ID: " . $ordem['ID'] . "<br>";
             echo "Código: " . $ordem['CODIGO'] . "<br>";

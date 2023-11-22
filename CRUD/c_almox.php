@@ -76,7 +76,6 @@ if (isset($_GET["listar"])) {
     $itens_almoxarifado = $estadoAlmox->fetchAll(PDO::FETCH_ASSOC);
 
     if (count($itens_almoxarifado) > 0) {
-        echo "<h2>Lista de Itens no Almoxarifado:</h2>";
         foreach ($itens_almoxarifado as $item) {
             echo "ID: " . $item['ID'] . "<br>";
             echo "Código: " . $item['CODIGO'] . "<br>";

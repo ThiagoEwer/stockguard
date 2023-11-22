@@ -77,7 +77,7 @@ if (isset($_GET["listar"])) {
     $clientes = $estadoCli->fetchAll(PDO::FETCH_ASSOC);
 
     if ($clientes) {
-        echo "<h2>Lista de Clientes:</h2>";
+      
         foreach ($clientes as $cliente) {
             echo "ID: " . $cliente['ID'] . "<br>";
             echo "CNPJ/CPF: " . $cliente['CNPJ_CPF'] . "<br>";

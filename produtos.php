@@ -60,7 +60,9 @@
                         <label for="validade">Validade:</label>
                         <input type="date" class="form-control" name="validade" required>
                     </div>
+                     <!-- Listar Produtos -->
                     <button type="submit" class="btn btn-primary">Inserir</button>
+                    <a class="btn btn-success" href="CRUD/c_prod.php?listar=1" data-toggle="modal" data-target="#modallistaprodutos">Listar Produtos</a>
                 </form>
             </div>
 
@@ -114,9 +116,29 @@
         </div>
 
         <!-- Listar Produtos -->
-        <h2 class="mt-4">Listar Produtos</h2>
-        <a href="CRUD/c_prod.php?listar=1" class="btn btn-success">Listar Produtos</a>
 
+    </div>
+
+
+    <div class="modal fade" id="modallistaprodutos" tabindex="-1" role="dialog" aria-labelledby="modallistaprodutosLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modallistaprodutosLabel">Lista de Produtos:</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- Use um iframe para carregar a outra página -->
+                    <iframe src="CRUD/c_prod.php?listar=1" style="width: 100%; height: 500px; border: none;"></iframe>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                    <!-- Adicione outros botões conforme necessário -->
+                </div>
+            </div>
+        </div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

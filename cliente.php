@@ -46,7 +46,12 @@
                         <label for="cep">CEP:</label>
                         <input type="text" class="form-control" name="cep" required>
                     </div>
+                    
                     <button type="submit" class="btn btn-primary">Inserir</button>
+
+                   <!-- Listar Clientes -->
+            <a class="btn btn-success" href="CRUD/c_client.php?listar=1" data-toggle="modal" data-target="#modallistaclientes">Listar Clientes</a>
+                    
                 </form>
             </div>
 
@@ -87,10 +92,27 @@
             </div>
         </div>
 
-        <!-- Listar Clientes -->
-        <h2 class="mt-4">Listar Clientes</h2>
-        <a href="CRUD/c_client.php?listar=1" class="btn btn-success">Listar Clientes</a>
+    
 
+    <div class="modal fade" id="modallistaclientes" tabindex="-1" role="dialog" aria-labelledby="modallistaclientesLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modallistaclientesLabel">Lista de Clientes:</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- Use um iframe para carregar a outra página -->
+                    <iframe src="CRUD/c_client.php?listar=1" style="width: 100%; height: 500px; border: none;"></iframe>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                    <!-- Adicione outros botões conforme necessário -->
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- Adicione os scripts do Bootstrap no final do corpo -->
