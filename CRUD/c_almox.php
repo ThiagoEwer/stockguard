@@ -15,9 +15,15 @@ if (isset($_POST["codigo"]) && isset($_POST["local_arm"]) && isset($_POST["cod_p
     $estadoAlmox->bindParam(":total_prod", $total_prod);
 
     if ($estadoAlmox->execute()) {
-        echo "Item inserido no Almoxarifado com sucesso!";
+        echo "<script>
+        alert('Item inserido no Almoxarifado com sucesso!');
+        window.history.go(-1);
+    </script>";
     } else {
-        echo "Erro ao inserir o item no Almoxarifado.";
+        echo "<script>
+        alert('Erro ao inserir o item no Almoxarifado.');
+        window.history.go(-1);
+    </script>";
     }
 }
 
