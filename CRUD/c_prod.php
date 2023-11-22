@@ -4,14 +4,16 @@ include_once("../ADMIN/config.inc.php");
 //----------------------------------------------------------------------------
 
 //adiciona
-if (isset($_POST["nome"]) && isset($_POST["tipo"]) && isset($_POST["quantidade"]) && isset($_POST["local"]) && isset($_POST["validade"])) {
+if (isset($_POST["codigo"]) && isset($_POST["nome"]) && isset($_POST["tipo"]) && isset($_POST["quantidade"]) && isset($_POST["local"]) && isset($_POST["validade"])) {
+    $codigo = $_POST["codigo"];
     $nome = $_POST["nome"];
     $tipo = $_POST["tipo"];
     $quantidade = $_POST["quantidade"];
     $local = $_POST["local"];
     $validade = $_POST["validade"];
 
-    $estadoPrd = $conn->prepare("INSERT INTO PRODUTOS (NOME, TIPO, QUANTIDADE, LOCAL, VALIDADE) VALUES (:nome, :tipo, :quantidade, :local, :validade)");
+    $estadoPrd = $conn->prepare("INSERT INTO PRODUTOS (CODIGO, NOME, TIPO, QUANTIDADE, LOCAL, VALIDADE) VALUES (:codigo, :nome, :tipo, :quantidade, :local, :validade)");
+    $estadoPrd->bindParam(":codigo", $codigo);
     $estadoPrd->bindParam(":nome", $nome);
     $estadoPrd->bindParam(":tipo", $tipo);
     $estadoPrd->bindParam(":quantidade", $quantidade);
@@ -34,16 +36,18 @@ if (isset($_POST["nome"]) && isset($_POST["tipo"]) && isset($_POST["quantidade"]
 //----------------------------------------------------------------------------
 
 //atualiza
-if (isset($_POST["id"]) && isset($_POST["novoNome"]) && isset($_POST["novoTipo"]) && isset($_POST["novaQuantidade"]) && isset($_POST["novoLocal"]) && isset($_POST["novaValidade"])) {
+if (isset($_POST["id"]) && isset($_POST["novoCodigo"]) && isset($_POST["novoNome"]) && isset($_POST["novoTipo"]) && isset($_POST["novaQuantidade"]) && isset($_POST["novoLocal"]) && isset($_POST["novaValidade"])) {
     $id = $_POST["id"];
+    $novoCodigo = $_POST["novoCodigo"];
     $novoNome = $_POST["novoNome"];
     $novoTipo = $_POST["novoTipo"];
     $novaQuantidade = $_POST["novaQuantidade"];
     $novoLocal = $_POST["novoLocal"];
     $novaValidade = $_POST["novaValidade"];
 
-    $estadoPrd = $conn->prepare("UPDATE PRODUTOS SET NOME = :novoNome, TIPO = :novoTipo, QUANTIDADE = :novaQuantidade, LOCAL = :novoLocal, VALIDADE = :novaValidade WHERE ID = :id");
+    $estadoPrd = $conn->prepare("UPDATE PRODUTOS SET CODIGO = :novoCodigo, NOME = :novoNome, TIPO = :novoTipo, QUANTIDADE = :novaQuantidade, LOCAL = :novoLocal, VALIDADE = :novaValidade WHERE ID = :id");
     $estadoPrd->bindParam(":id", $id);
+    $estadoPrd->bindParam(":novoCodigo", $novoCodigo);
     $estadoPrd->bindParam(":novoNome", $novoNome);
     $estadoPrd->bindParam(":novoTipo", $novoTipo);
     $estadoPrd->bindParam(":novaQuantidade", $novaQuantidade);
@@ -62,7 +66,6 @@ if (isset($_POST["id"]) && isset($_POST["novoNome"]) && isset($_POST["novoTipo"]
     </script>";
     }
 }
-
 
 //----------------------------------------------------------------------------
 
@@ -87,7 +90,6 @@ if (isset($_POST["idExcluir"])) {
     }
 }
 
-
 //----------------------------------------------------------------------------
 
 //lista
@@ -100,6 +102,7 @@ if (isset($_GET["listar"])) {
         echo "<h2>Lista de Produtos:</h2>";
         foreach ($produtos as $produto) {
             echo "ID: " . $produto['ID'] . "<br>";
+            echo "Código: " . $produto['CODIGO'] . "<br>"; // Novo campo
             echo "Nome: " . $produto['NOME'] . "<br>";
             echo "Tipo: " . $produto['TIPO'] . "<br>";
             echo "Quantidade: " . $produto['QUANTIDADE'] . "<br>";
