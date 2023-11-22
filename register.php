@@ -51,7 +51,7 @@
 
 								<div class="align-items-center d-flex">
 									<button type="submit" class="btn-outline-danger ms-auto">
-										Registre-se	
+									<a href="index.php" class="text-dark">Registre-se</a>
 									</button>
 								</div>
 							</form>
