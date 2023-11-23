@@ -1,6 +1,8 @@
 <html>
     <head>
         <title>Stockguard - Controle de Estoque</title>
+        <link rel="icon" href="icons/logo.png" type="image/png">
+
          
        
     </head>
