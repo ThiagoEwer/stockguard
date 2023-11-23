@@ -14,11 +14,18 @@
 		<div class="container h-100">
 			<div class="row justify-content-sm-center h-100">
 				<div class="col-xxl-4 col-xl-5 col-lg-5 col-md-7 col-sm-9">
+					<br><br><br>
 					<div class="text-center my-5">
-						<a href="https://ibb.co/NSXQSNw"><img src="https://i.ibb.co/L5Mb5g4/stockguardlogo.jpg" alt="stockguardlogo" borde="0" alt="logo" width="100" /></a>
 					</div>
 					<div class="card shadow-lg">
+					<br>
+					<div id="loginicons" class="d-flex align-items-center justify-content-center">
+						
+						<img src="icons/logo.png" width="100px" >
+
+						</div>	
 						<div class="card-body p-5">
+							
 							<h1 class="fs-4 card-title fw-bold mb-4">Registre-se</h1>
 							<form action="register.php" method="POST" class="needs-validation" novalidate="" autocomplete="off">
 								<div class="mb-3">

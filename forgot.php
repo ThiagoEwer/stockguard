@@ -13,14 +13,19 @@
 <body>
 	<section class="h-100">
 		<div class="container h-100">
+			<br><br><br><br><br><br><br>
 			<div class="row justify-content-sm-center h-100">
 				<div class="col-xxl-4 col-xl-5 col-lg-5 col-md-7 col-sm-9">
 					<div class="text-center my-5">
-						<a href="https://ibb.co/NSXQSNw"><img src="https://i.ibb.co/L5Mb5g4/stockguardlogo.jpg" alt="stockguardlogo" borde="0" alt="logo" width="100" /></a>
+						
 					</div>
+					
 					<div class="card shadow-lg">
+						
 						<div class="card-body p-5">
+							
 							<h1 class="fs-4 card-title fw-bold mb-4">Esqueceu sua senha</h1>
+
 							<form method="POST" class="needs-validation" novalidate="" autocomplete="off">
 								<div class="mb-3">
 									<label class="mb-2 text-muted" for="email">Endereço de Email</label>
