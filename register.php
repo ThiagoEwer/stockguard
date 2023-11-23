@@ -26,8 +26,9 @@
 
 						</div>	
 						<div class="card-body p-5">
-							
+						<div id="Loginscript" class="d-flex align-items-center justify-content-center">
 							<h1 class="fs-4 card-title fw-bold mb-4">Registre-se</h1>
+						</div>
 							<form action="register.php" method="POST" class="needs-validation" novalidate="" autocomplete="off">
 								<div class="mb-3">
 									<label class="mb-2 text-muted" for="usuario">Usuário</label>
