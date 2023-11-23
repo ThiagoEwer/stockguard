@@ -22,13 +22,15 @@ if (isset($_POST["nome"]) && isset($_POST["email"])) {
         alert('Usuário inserido com sucesso!');
         window.history.go(-1);
     </script>";
-    } else {
+    }
+    /*
+     else {
         echo "<script>
         alert('Erro ao inserir o usuário.');
         window.history.go(-1);
-    </script>";
-        
+    </script>";  
     }
+    */
 }
 
 //----------------------------------------------------------------------------
@@ -53,12 +55,15 @@ if (isset($_POST["id"]) && isset($_POST["novoNome"]) && isset($_POST["novoEmail"
         window.history.go(-1);
     </script>";
         
-    } else {
+    }
+    /*
+    else {
         echo "<script>
         alert('Erro ao atualizar o usuário.');
         window.history.go(-1);
     </script>";
     }
+    */
 }
 
 
@@ -76,12 +81,15 @@ if (isset($_POST["idExcluir"])) {
         alert('Usuário excluído com sucesso!');
         window.history.go(-1);
     </script>";
-    } else {
+    } 
+    /*
+    else {
         echo "<script>
         alert('Erro ao excluir o usuario');
         window.history.go(-1);
     </script>";
     }
+    */
 }
 
 
@@ -113,12 +121,15 @@ if (isset($_GET["listar"])) {
             echo "<br>";
             echo "</div>";
         }
-    } else {
+    } 
+    /*
+    else {
         echo "<script>
         alert('Nenhum usuário encontrado');
         window.history.go(-1);
     </script>";
     }
+    */
 }
 
 ?>

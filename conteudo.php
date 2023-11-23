@@ -82,7 +82,7 @@
             ESTOQUE ATUAL
         </div>
         <!-- Criar a função atualizar tabela (THIAGO)-->
-        <button class="btn btn-outline-primary" onclick="atualizarTabela()">
+        <button class="btn btn-outline-primary" onclick="atualizarPagina()">
             <i class="fas fa-sync-alt"></i>Atualizar
         </button>
     </div>
@@ -175,6 +175,9 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                    <button class="btn btn-outline-primary" onclick="atualizarPagina()">
+            <i class="fas fa-sync-alt"></i>Atualizar
+        </button>
                     
                     <!-- Adicione outros botões conforme necessário -->
                 </div>
@@ -189,7 +192,7 @@
             </div>
         </div>
     </div>
-
+        <script src="JS/atualizar.js"></script>
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

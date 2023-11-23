@@ -19,12 +19,15 @@ if (isset($_POST["codigo"]) && isset($_POST["local_arm"]) && isset($_POST["cod_p
         alert('Item inserido no Almoxarifado com sucesso!');
         window.history.go(-1);
     </script>";
-    } else {
+    }
+    /*
+     else {
         echo "<script>
         alert('Erro ao inserir o item no Almoxarifado.');
         window.history.go(-1);
     </script>";
     }
+    */
 }
 
 // Atualizar Item no Almoxarifado
@@ -48,12 +51,15 @@ if (isset($_POST["id"]) && isset($_POST["novoCodigo"]) && isset($_POST["novoLoca
         window.history.go(-1);
     </script>";
         
-    } else {
+    }
+    /*
+    else {
         echo "<script>
         alert('Erro ao atualizar o item no Almoxarifado.');
         window.history.go(-1);
     </script>";
     }
+    */
 }
 
 // Excluir Item do Almoxarifado
@@ -68,12 +74,15 @@ if (isset($_POST["idExcluir"])) {
         alert('Item do Almoxarifado excluído com sucesso!');
         window.history.go(-1);
     </script>";
-    } else {
+    }
+    /* 
+    else {
         echo "<script>
         alert('Erro ao excluir o item do Almoxarifado.');
         window.history.go(-1);
     </script>";
     }
+    */
 }
 
 // Listar Itens do Almoxarifado
@@ -106,12 +115,15 @@ if (isset($_GET["listar"])) {
             echo "</div>";
             echo "<br>";
         }
-    } else {
+    } 
+    /*
+    else {
         echo "<script>
         alert('Nenhum produto no almoxarifado, cadastre primeiro');
         window.history.go(-1);
     </script>";
     }
+    */
 }
 
 ?>
