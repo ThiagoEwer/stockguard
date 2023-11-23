@@ -3,9 +3,7 @@
 
   <main>
     <div class="container-fluid px-4">
-        <ol class="breadcrumb mb-4">
-            <li class="breadcrumb-item active">BEM-VINDO</li>
-        </ol>
+      <br><br>
         <div class="row">
             <div class="col-xl-3 col-md-6">
                 <div class="card bg-primary text-white mb-4">
