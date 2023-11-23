@@ -88,6 +88,9 @@
 </div>
 
 
+
+<div class="modals">
+
 <div class="modal fade" id="modalcli" tabindex="-1" role="dialog" aria-labelledby="modalcliLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
@@ -176,7 +179,7 @@
         
         
         </button>
-                    
+        </div>                   
                     <!-- Adicione outros botões conforme necessário -->
                 </div>
             </div>
