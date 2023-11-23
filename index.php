@@ -2,6 +2,9 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
+
+<title>Stockguard - Login</title>
+        <link rel="icon" href="icons/logo.png" type="image/png">
 	<meta charset="utf-8">
 	<meta name="author" content="Muhamad Nauval Azhar">
 	<meta name="viewport" content="width=device-width,initial-scale=1">
@@ -15,11 +18,19 @@
 			<div class="row justify-content-sm-center h-100">
 				<div class="col-xxl-4 col-xl-5 col-lg-5 col-md-7 col-sm-9">
 					<div class="text-center my-5">
-						<a href="https://ibb.co/NSXQSNw"><img src="https://i.ibb.co/L5Mb5g4/stockguardlogo.jpg" alt="stockguardlogo" borde="0" alt="logo" width="100" /></a>
+				<br><br><br>
 					</div>
 					<div class="card shadow-lg">
+						<br>
+					<div id="loginicons" class="d-flex align-items-center justify-content-center">
+						
+						<img src="icons/logo.png" width="100px" >
+
+						</div>
 						<div class="card-body p-5">
+							<div id="Loginscript" class="d-flex align-items-center justify-content-center">
 							<h1 class="fs-4 card-title fw-bold mb-4">Login</h1>
+							</div>
 							<form method="POST" class="needs-validation" novalidate="" autocomplete="off">
 								<div class="mb-3">
 									<label class="text-muted" for="usuario">Usuário</label>

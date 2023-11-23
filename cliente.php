@@ -2,7 +2,8 @@
 <html lang="pt">
 
 <head>
-    
+<title>Stockguard - Clientes</title>
+        <link rel="icon" href="icons/logo.png" type="image/png">
 </head>
 <!-- Conteudo -->
 <body>
@@ -120,12 +121,14 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     
-    <div id="rodape">
+
+
+        </div><!--fim da div geral-->    
+
+        <div id="rodape">
                 <?php include "rodape.php";
                 ?>            
                                
             </div>
-
-        </div><!--fim da div geral-->    
 
 </body>
