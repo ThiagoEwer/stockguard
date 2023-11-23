@@ -2,7 +2,8 @@
 <html lang="pt">
 
 <head>
-    
+<title>Stockguard - Clientes</title>
+        <link rel="icon" href="icons/logo.png" type="image/png">
 </head>
 <!-- Conteudo -->
 <body>

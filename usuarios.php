@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt">
-
+<title>Stockguard - Usuários</title>
+        <link rel="icon" href="icons/logo.png" type="image/png">
 
 <head>
    

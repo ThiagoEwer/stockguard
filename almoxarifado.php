@@ -3,7 +3,8 @@
 
 
     <head>
-
+    <title>Stockguard - Almoxarifado</title>
+        <link rel="icon" href="icons/logo.png" type="image/png">
     </head>
 
 
