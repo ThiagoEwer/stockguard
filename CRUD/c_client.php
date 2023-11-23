@@ -17,12 +17,15 @@ if (isset($_POST["cnpj_cpf"]) && isset($_POST["razao_social_nome"]) && isset($_P
         alert('Cliente inserido com sucesso!');
         window.history.go(-1);
     </script>";
-    } else {
+    } 
+    /*
+    else {
         echo "<script>
         alert('Erro ao inserir o cliente.');
         window.history.go(-1);
     </script>";
     }
+    */
 }
 
 // Atualizar Cliente
@@ -43,12 +46,15 @@ if (isset($_POST["id"]) && isset($_POST["novoCnpjCpf"]) && isset($_POST["novoRaz
         alert('Cliente atualizado com sucesso!');
         window.history.go(-1);
     </script>";
-    } else {
+    } 
+    /*
+    else {
         echo "<script>
         alert('Erro ao atualizar o cliente.');
         window.history.go(-1);
     </script>";
     }
+    */
 }
 
 // Excluir Cliente
@@ -63,12 +69,15 @@ if (isset($_POST["idExcluir"])) {
         alert('Cliente excluído com sucesso!');
         window.history.go(-1);
     </script>";
-    } else {
+    } 
+    /*
+    else {
         echo "<script>
         alert('Erro ao excluir o cliente.');
         window.history.go(-1);
     </script>";
     }
+    */
 }
 
 // Listar Clientes
@@ -96,12 +105,15 @@ if (isset($_GET["listar"])) {
             echo "CEP: " . $cliente['CEP'] . "<br>";
             echo "</div>";
         }
-    } else {
+    }
+    /*
+    else {
         echo "<script>
         alert('Nenhum cliente cadastrado, sua empresa vai falir sem clientes.');
         window.history.go(-1);
     </script>";
     }
+    */
 }
 
 ?>

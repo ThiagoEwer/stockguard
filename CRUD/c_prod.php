@@ -25,12 +25,15 @@ if (isset($_POST["codigo"]) && isset($_POST["nome"]) && isset($_POST["tipo"]) &&
         alert('Produto inserido com sucesso!');
         window.history.go(-1);
     </script>";
-    } else {
+    } 
+    /*
+    else {
         echo "<script>
         alert('Erro ao inserir o produto.');
         window.history.go(-1);
     </script>";
     }
+    */
 }
 
 //----------------------------------------------------------------------------
@@ -59,12 +62,15 @@ if (isset($_POST["id"]) && isset($_POST["novoCodigo"]) && isset($_POST["novoNome
         alert('Produto atualizado com sucesso!');
         window.history.go(-1);
     </script>";
-    } else {
+    } 
+    /*
+    else {
         echo "<script>
         alert('Erro ao atualizar o produto.');
         window.history.go(-1);
     </script>";
     }
+    */
 }
 
 //----------------------------------------------------------------------------
@@ -82,12 +88,15 @@ if (isset($_POST["idExcluir"])) {
         alert('Produto excluído com sucesso!');
         window.history.go(-1);
     </script>";
-    } else {
+    }
+    /*
+    else {
         echo "<script>
         alert('Erro ao excluir o produto.');
         window.history.go(-1);
     </script>";
     }
+    */
 }
 
 //----------------------------------------------------------------------------
@@ -125,12 +134,15 @@ if (isset($_GET["listar"])) {
             <br><br>";
             echo "</div>";
         }
-    } else {
+    } 
+    /*
+    else {
         echo "<script>
         alert('Nenhum produto encontrado.');
         window.history.go(-1);
     </script>";
     }
+    */
 }
 
 ?>

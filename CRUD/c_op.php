@@ -23,12 +23,15 @@ if (isset($_POST["codigo"]) && isset($_POST["cliente"]) && isset($_POST["produto
         alert('Ordem de Produção Inserida com sucesso!');
         window.history.go(-1);
     </script>";
-    } else {
+    } 
+    /*
+    else {
         echo "<script>
         alert('Erro ao inserir a Ordem de Produção.');
         window.history.go(-1);
     </script>";
     }
+    */
 }
 
 if (isset($_POST["id"]) && isset($_POST["novoCodigo"]) && isset($_POST["novoCliente"]) && isset($_POST["novoProduto"]) && isset($_POST["novaQuantidade"]) && isset($_POST["novoLocalAlmox"]) && isset($_POST["novoCepDestino"])) {
@@ -55,12 +58,15 @@ if (isset($_POST["id"]) && isset($_POST["novoCodigo"]) && isset($_POST["novoClie
         alert('Ordem de Produção atualizada com sucesso!');
         window.history.go(-1);
     </script>";
-    } else {
+    }
+    /*
+    else {
         echo "<script>
         alert('Erro ao atualizar a Ordem de Produção.');
         window.history.go(-1);
     </script>";
     }
+    */
 }
 
 if (isset($_POST["idExcluir"])) {
@@ -75,13 +81,17 @@ if (isset($_POST["idExcluir"])) {
         alert('Ordem de Produção excluída com sucesso!');
         window.history.go(-1);
     </script>";
-    } else {
+    } 
+    /*
+    else {
         echo "<script>
         alert('Erro ao excluir a Ordem de Produção.');
         window.history.go(-1);
     </script>";
     }
+    */
 }
+
 if (isset($_GET["listar"])) {
     // Listar Ordens de Produção
     $stmt = $conn->query("SELECT * FROM ORDENS_DE_PRODUCAO");
@@ -114,12 +124,15 @@ if (isset($_GET["listar"])) {
             echo "<br>";
             
         }
-    } else {
+    } 
+    /*
+    else {
         echo "<script>
         alert('Nenhuma OP cadastrada, venda algo ou movimente seu estoque.');
         window.history.go(-1);
     </script>";
     }
+    */
 }
 
 
