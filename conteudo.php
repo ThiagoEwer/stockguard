@@ -173,8 +173,8 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                    <button class="btn btn-outline-primary" onclick="atualizarPagina()">
-            <i class="fas fa-sync-alt"></i>Atualizar
+        
+        
         </button>
                     
                     <!-- Adicione outros botões conforme necessário -->
