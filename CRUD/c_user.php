@@ -100,36 +100,48 @@ if (isset($_GET["listar"])) {
     $usuarios = $estadoUsu->fetchAll(PDO::FETCH_ASSOC);
 
     if (count($usuarios) > 0) {
-            echo "<style>";
-            echo "    .user-info {";
-            echo "        background-color: #f0f0f0;";
-            echo "        padding: 10px;";
-            echo "        margin-bottom: 10px;";
-            echo "        border: 1px solid #000;";
-            echo "        border-radius: 3px;"; 
-            echo "    }";
-            echo "</style>";
+        echo "<link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css'>";
+        echo "<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css'>";
 
+        echo "<form method='post'>";
+        echo "<table class='table'>";
+        echo "<thead class='thead-light'>";
+        echo "<tr>";
+        echo "    <th>ID</th>";
+        echo "    <th>Nome</th>";
+        echo "    <th>Email</th>";
+        echo "    <th>Telefone</th>";
+        echo "    <th>Ação</th>";
+        echo "</tr>";
+        echo "</thead>";
+        echo "<tbody>";
 
         foreach ($usuarios as $usuario) {
-            echo "<div class='user-info'>";
-            echo "ID: " . $usuario['ID'] . "<br>";
-            echo "Nome: " . $usuario['NOMES'] . "<br>";
-            echo "Email: " . $usuario['EMAIL'] . "<br>";
-            echo "Telefone: " . $usuario['TELEFONE'] . "<br>";
-      
-            echo "<br>";
-            echo "</div>";
+            echo "<tr>";
+            echo "    <td>" . $usuario['ID'] . "</td>";
+            echo "    <td>" . $usuario['NOMES'] . "</td>";
+            echo "    <td>" . $usuario['EMAIL'] . "</td>";
+            echo "    <td>" . $usuario['TELEFONE'] . "</td>";
+            echo "    <td><button type='submit' class='btn btn-danger' name='idExcluir' value='" . $usuario['ID'] . "'><i class='fas fa-trash'></i></button></td>";
+            echo "</tr>";
         }
-    } 
-    /*
-    else {
-        echo "<script>
-        alert('Nenhum usuário encontrado');
-        window.history.go(-1);
-    </script>";
+
+        echo "</tbody>";
+        echo "</table>";
+        echo "</form>";
+
+        if (isset($_POST["idExcluir"])) {
+            // Excluir Usuário
+            $idExcluir = $_POST["idExcluir"];
+
+            $estadoUsu = $conn->prepare("DELETE FROM USUARIOS WHERE ID = :idExcluir");
+            $estadoUsu->bindParam(":idExcluir", $idExcluir);
+
+        }
     }
-    */
 }
+echo "<script>";
+echo "    setTimeout(function() { location.reload(true); }, 1000);"; // Recarrega após 1 segundo (1000 milissegundos)
+echo "</script>";
 
 ?>

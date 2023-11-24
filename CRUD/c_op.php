@@ -92,48 +92,64 @@ if (isset($_POST["idExcluir"])) {
     */
 }
 
+
 if (isset($_GET["listar"])) {
     // Listar Ordens de Produção
     $stmt = $conn->query("SELECT * FROM ORDENS_DE_PRODUCAO");
     $ordens = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     if (count($ordens) > 0) {
+        echo "<link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css'>";
+        echo "<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css'>";
 
-        echo "<style>";
-        echo "    .ordens-info {";
-        echo "        background-color: #f0f0f0;";
-        echo "        padding: 10px;";
-        echo "        margin-bottom: 10px;";
-        echo "        border: 1px solid #000;";
-        echo "        border-radius: 3px;"; 
-        echo "    }";
-        echo "</style>";
-    
-
+        echo "<form method='post'>";
+        echo "<table class='table'>";
+        echo "<thead class='thead-light'>";
+        echo "<tr>";
+        echo "    <th>ID</th>";
+        echo "    <th>Código</th>";
+        echo "    <th>Cliente</th>";
+        echo "    <th>Produto</th>";
+        echo "    <th>Quantidade</th>";
+        echo "    <th>Local de Armazenagem</th>";
+        echo "    <th>CEP de Destino</th>";
+        echo "    <th>Ação</th>";
+        echo "</tr>";
+        echo "</thead>";
+        echo "<tbody>";
 
         foreach ($ordens as $ordem) {
-            echo "<div class='ordens-info'>";
-            echo "ID: " . $ordem['ID'] . "<br>";
-            echo "Código: " . $ordem['CODIGO'] . "<br>";
-            echo "Cliente: " . $ordem['CLIENTE'] . "<br>";
-            echo "Produto: " . $ordem['PRODUTO'] . "<br>";
-            echo "Quantidade: " . $ordem['QUANTIDADE'] . "<br>";
-            echo "Local de Armazenagem: " . $ordem['LOCAL_ALMOX'] . "<br>";
-            echo "CEP de Destino: " . $ordem['CEP_DESTINO'] . "<br>";
-            echo "</div>";
-            echo "<br>";
+            echo "<tr>";
+            echo "    <td>" . $ordem['ID'] . "</td>";
+            echo "    <td>" . $ordem['CODIGO'] . "</td>";
+            echo "    <td>" . $ordem['CLIENTE'] . "</td>";
+            echo "    <td>" . $ordem['PRODUTO'] . "</td>";
+            echo "    <td>" . $ordem['QUANTIDADE'] . "</td>";
+            echo "    <td>" . $ordem['LOCAL_ALMOX'] . "</td>";
+            echo "    <td>" . $ordem['CEP_DESTINO'] . "</td>";
+            echo "    <td><button type='submit' class='btn btn-danger' name='idExcluir' value='" . $ordem['ID'] . "'><i class='fas fa-trash'></i></button></td>";
+            echo "</tr>";
+        }
+
+        echo "</tbody>";
+        echo "</table>";
+        echo "</form>";
+
+        if (isset($_POST["idExcluir"])) {
+            // Excluir Ordem de Produção
+            $idExcluir = $_POST["idExcluir"];
+
+            $stmt = $conn->prepare("DELETE FROM ORDENS_DE_PRODUCAO WHERE ID = :idExcluir");
+            $stmt->bindParam(":idExcluir", $idExcluir);
+
             
         }
-    } 
-    /*
-    else {
-        echo "<script>
-        alert('Nenhuma OP cadastrada, venda algo ou movimente seu estoque.');
-        window.history.go(-1);
-    </script>";
     }
-    */
 }
+echo "<script>";
+echo "    setTimeout(function() { location.reload(true); }, 1000);"; // Recarrega após 1 segundo (1000 milissegundos)
+echo "</script>";
+
 
 
 ?>

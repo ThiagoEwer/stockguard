@@ -86,44 +86,55 @@ if (isset($_POST["idExcluir"])) {
 }
 
 // Listar Itens do Almoxarifado
-if (isset($_GET["listar"])) {
+if (isset($_GET["listar"])) 
     $estadoAlmox = $conn->query("SELECT * FROM ALMOXARIFADO");
     $itens_almoxarifado = $estadoAlmox->fetchAll(PDO::FETCH_ASSOC);
 
     if (count($itens_almoxarifado) > 0) {
-
-        echo "<style>";
-        echo "    .almox-info {";
-        echo "        background-color: #f0f0f0;";
-        echo "        padding: 10px;";
-        echo "        margin-bottom: 10px;";
-        echo "        border: 1px solid #000;";
-        echo "        border-radius: 3px;"; 
-        echo "    }";
-        echo "</style>";
-
-
-
-
+        echo "<link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css'>";
+        echo "<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css'>";
+        echo "<div style='overflow-x:auto;'>";
+        echo "<form method='post'>";
+        echo "<table class='table'>";
+        echo "<thead class='thead-light' style='position: sticky; top: 0;'>";
+        echo "<tr>";
+        echo "    <th>ID</th>";
+        echo "    <th>Código</th>";
+        echo "    <th>Local de Armazenagem</th>";
+        echo "    <th>Código do Produto</th>";
+        echo "    <th>Total de Produtos</th>";
+        echo "    <th>Ação</th>";
+        echo "</tr>";
+        echo "</thead>";
+        echo "<tbody>";
+    
         foreach ($itens_almoxarifado as $item) {
-            echo "<div class='almox-info'>";
-            echo "ID: " . $item['ID'] . "<br>";
-            echo "Código: " . $item['CODIGO'] . "<br>";
-            echo "Local de Armazenagem: " . $item['LOCAL_ARM'] . "<br>";
-            echo "Código do Produto: " . $item['COD_PROD'] . "<br>";
-            echo "Total de Produtos: " . $item['TOTAL_PROD'] . "<br>";
-            echo "</div>";
-            echo "<br>";
+            echo "<tr>";
+            echo "    <td>" . $item['ID'] . "</td>";
+            echo "    <td>" . $item['CODIGO'] . "</td>";
+            echo "    <td>" . $item['LOCAL_ARM'] . "</td>";
+            echo "    <td>" . $item['COD_PROD'] . "</td>";
+            echo "    <td>" . $item['TOTAL_PROD'] . "</td>";
+            echo "    <td><button type='submit' class='btn btn-danger' name='idExcluir' value='" . $item['ID'] . "'><i class='fas fa-trash'></i></button></td>";
+            echo "</tr>";
         }
-    } 
-    /*
-    else {
-        echo "<script>
-        alert('Nenhum produto no almoxarifado, cadastre primeiro');
-        window.history.go(-1);
-    </script>";
+    
+        echo "</tbody>";
+        echo "</table>";
+        echo "</form>";
+    
+        if (isset($_POST["idExcluir"])) {
+            $idExcluir = $_POST["idExcluir"];
+    
+            $estadoAlmox = $conn->prepare("DELETE FROM ALMOXARIFADO WHERE ID = :idExcluir");
+            $estadoAlmox->bindParam(":idExcluir", $idExcluir);
+    
+ 
+        }
     }
-    */
-}
 
+
+    echo "<script>";
+echo "    setTimeout(function() { location.reload(true); }, 1000);";
+echo "</script>";
 ?>

@@ -147,14 +147,6 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
     <!-- Script personalizado para mostrar os modais ao clicar nos links -->
-    <script>
-        document.getElementById('privacyLink').addEventListener('click', function() {
-            $('#privacyModal').modal('show');
-        });
 
-        document.getElementById('termsLink').addEventListener('click', function() {
-            $('#termsModal').modal('show');
-        });
-    </script>
 
 </body>
