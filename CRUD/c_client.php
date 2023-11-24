@@ -126,10 +126,7 @@ if (isset($_GET["listar"])) {
         }
     }
 
-    echo "<script>";
-    echo "    setTimeout(function() { location.reload(true); }, 1000);"; // Recarrega após 1 segundo (1000 milissegundos)
-    echo "</script>";
-    
+ 
     /*
     else {
         echo "<script>

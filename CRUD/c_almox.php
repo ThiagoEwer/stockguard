@@ -134,7 +134,4 @@ if (isset($_GET["listar"]))
     }
 
 
-    echo "<script>";
-echo "    setTimeout(function() { location.reload(true); }, 1000);";
-echo "</script>";
 ?>

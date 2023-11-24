@@ -79,7 +79,9 @@ if (isset($_POST["idExcluir"])) {
     if ($estadoUsu->execute()) {
         echo "<script>
         alert('Usuário excluído com sucesso!');
+        window.location.reload(true);
         window.history.go(-1);
+     
     </script>";
     } 
     /*
@@ -140,8 +142,5 @@ if (isset($_GET["listar"])) {
         }
     }
 }
-echo "<script>";
-echo "    setTimeout(function() { location.reload(true); }, 1000);"; // Recarrega após 1 segundo (1000 milissegundos)
-echo "</script>";
 
 ?>
