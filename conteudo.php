@@ -1,6 +1,5 @@
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 
-
   <main>
     <div class="container-fluid px-4">
       <br><br>
@@ -53,6 +52,7 @@
                     
                     <div class="card-footer d-flex align-items-center justify-content-between">
                         <a class="small text-white stretched-link" href="#" data-toggle="modal" data-target="#modalprod">Acesso rápido</a>
+                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                     </div>
                 </div>
             </div>
@@ -80,9 +80,9 @@
             ESTOQUE ATUAL
         </div>
         <!-- Criar a função atualizar tabela (THIAGO)-->
-        <button class="btn btn-outline-primary" onclick="atualizarPagina()">
-            <i class="fas fa-sync-alt"></i>Atualizar
-        </button>
+        <button class="btn btn-outline-primary rotate-on-hover" onclick="atualizarPagina()">
+        <i class="fas fa-sync-alt"></i> Atualizar
+    </button>
     </div>
     <!-- Outros conteúdos da card aqui -->
 </div>
@@ -193,7 +193,7 @@
             </div>
         </div>
     </div>
-        <script src="JS/atualizar.js"></script>
+        <script src="JS/script.js"></script>
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
