@@ -4,39 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
-
-        main {
-            flex: 1;
-            overflow-y: auto;
-        }
-
-        footer {
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            height: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .container-fluid {
-            text-align: center;
-        }
-
-        .modal-body {
-            max-height: 60vh;
-            overflow-y: auto;
-        }
-    </style>
+    <link rel="stylesheet" href="CSS/style.css">
     <title>Bootstrap Modal Example</title>
 </head>
 <body>
@@ -145,8 +113,6 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-
-    <!-- Script personalizado para mostrar os modais ao clicar nos links -->
 
 
 </body>

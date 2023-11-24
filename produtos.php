@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="pt">
 
-<title>Stockguard - Produtos</title>
+        <title>Stockguard - Produtos</title>
         <link rel="icon" href="icons/logo.png" type="image/png">
-<head>
-    
-</head>
+        <head>
+        </head>
 
 <!-- Conteudo -->
 <body>
