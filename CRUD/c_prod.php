@@ -149,18 +149,14 @@ if (isset($_GET["listar"])) {
             $estadoPrd = $conn->prepare("DELETE FROM PRODUTOS WHERE ID = :idExcluir");
             $estadoPrd->bindParam(":idExcluir", $idExcluir);
 
-            if ($estadoPrd->execute()) {
-                echo "<script>
-                alert('Produto excluído com sucesso!');
-                window.location.reload();
-                </script>";
-            } else {
-                echo "<script>
-                alert('Erro ao excluir o produto.');
-                </script>";
-            }
+
         }
     }
 }
+
+
+echo "<script>";
+echo "    setTimeout(function() { location.reload(true); }, 1000);"; // Recarrega após 1 segundo (1000 milissegundos)
+echo "</script>";
 
 ?>

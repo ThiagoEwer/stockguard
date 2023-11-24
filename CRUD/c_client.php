@@ -122,20 +122,13 @@ if (isset($_GET["listar"])) {
             $estadoCli = $conn->prepare("DELETE FROM CLIENTES WHERE ID = :idExcluir");
             $estadoCli->bindParam(":idExcluir", $idExcluir);
     
-            if ($estadoCli->execute()) {
-                echo "<script>
-                alert('Cliente excluído com sucesso!');
-                window.location.reload();
-                </script>";
-            } else {
-                echo "<script>
-                alert('Erro ao excluir o cliente!');
-                </script>";
-            }
+           
         }
     }
 
-
+    echo "<script>";
+    echo "    setTimeout(function() { location.reload(true); }, 1000);"; // Recarrega após 1 segundo (1000 milissegundos)
+    echo "</script>";
     
     /*
     else {

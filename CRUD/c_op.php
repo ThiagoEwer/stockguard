@@ -142,20 +142,13 @@ if (isset($_GET["listar"])) {
             $stmt = $conn->prepare("DELETE FROM ORDENS_DE_PRODUCAO WHERE ID = :idExcluir");
             $stmt->bindParam(":idExcluir", $idExcluir);
 
-            if ($stmt->execute()) {
-                echo "<script>
-                alert('Ordem de Produção excluída com sucesso!');
-                window.location.reload();
-                </script>";
-            } else {
-                echo "<script>
-                alert('Erro ao excluir a Ordem de Produção.');
-                </script>";
-            }
+            
         }
     }
 }
-
+echo "<script>";
+echo "    setTimeout(function() { location.reload(true); }, 1000);"; // Recarrega após 1 segundo (1000 milissegundos)
+echo "</script>";
 
 
 

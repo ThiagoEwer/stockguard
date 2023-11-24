@@ -93,10 +93,10 @@ if (isset($_GET["listar"]))
     if (count($itens_almoxarifado) > 0) {
         echo "<link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css'>";
         echo "<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css'>";
-    
+        echo "<div style='overflow-x:auto;'>";
         echo "<form method='post'>";
         echo "<table class='table'>";
-        echo "<thead class='thead-light'>";
+        echo "<thead class='thead-light' style='position: sticky; top: 0;'>";
         echo "<tr>";
         echo "    <th>ID</th>";
         echo "    <th>Código</th>";
@@ -129,17 +129,12 @@ if (isset($_GET["listar"]))
             $estadoAlmox = $conn->prepare("DELETE FROM ALMOXARIFADO WHERE ID = :idExcluir");
             $estadoAlmox->bindParam(":idExcluir", $idExcluir);
     
-            if ($estadoAlmox->execute()) {
-                echo "<script>
-                alert('Item do Almoxarifado excluído com sucesso!');
-                window.location.reload();
-                </script>";
-            } else {
-                echo "<script>
-                alert('Erro ao excluir o item do almoxarifado!');
-                </script>";
-            }
+ 
         }
     }
 
+
+    echo "<script>";
+echo "    setTimeout(function() { location.reload(true); }, 1000);";
+echo "</script>";
 ?>
