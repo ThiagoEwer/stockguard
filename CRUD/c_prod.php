@@ -108,41 +108,59 @@ if (isset($_GET["listar"])) {
     $produtos = $estadoPrd->fetchAll(PDO::FETCH_ASSOC);
 
     if ($produtos) {
-        echo "<style>";
-        echo "    .prod-info {";
-        echo "        background-color: #f0f0f0;";
-        echo "        padding: 10px;";
-        echo "        margin-bottom: 10px;";
-        echo "        border: 1px solid #000;";
-        echo "        border-radius: 3px;"; 
-        echo "    }";
-        echo "</style>";
-
-
-
-
+        echo "<link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css'>";
+        echo "<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css'>";
+        echo "<form method='post'>";
+        echo "<table class='table'>";
+        echo "<thead class='thead-light'>";
+        echo "<tr>";
+        echo "    <th>ID</th>";
+        echo "    <th>Código</th>";
+        echo "    <th>Nome</th>";
+        echo "    <th>Tipo</th>";
+        echo "    <th>Quantidade</th>";
+        echo "    <th>Local</th>";
+        echo "    <th>Validade</th>";
+        echo "    <th>Ação</th>";
+        echo "</tr>";
+        echo "</thead>";
+        echo "<tbody>";
 
         foreach ($produtos as $produto) {
-            echo "<div class='prod-info'>";
-            echo "ID: " . $produto['ID'] . "<br>";
-            echo "Código: " . $produto['CODIGO'] . "<br>"; // Novo campo
-            echo "Nome: " . $produto['NOME'] . "<br>";
-            echo "Tipo: " . $produto['TIPO'] . "<br>";
-            echo "Quantidade: " . $produto['QUANTIDADE'] . "<br>";
-            echo "Local: " . $produto['LOCAL'] . "<br>";
-            echo "Validade: " . $produto['VALIDADE'] . "
-            <br><br>";
-            echo "</div>";
+            echo "<tr>";
+            echo "    <td>" . $produto['ID'] . "</td>";
+            echo "    <td>" . $produto['CODIGO'] . "</td>";
+            echo "    <td>" . $produto['NOME'] . "</td>";
+            echo "    <td>" . $produto['TIPO'] . "</td>";
+            echo "    <td>" . $produto['QUANTIDADE'] . "</td>";
+            echo "    <td>" . $produto['LOCAL'] . "</td>";
+            echo "    <td>" . $produto['VALIDADE'] . "</td>";
+            echo "    <td><button type='submit' class='btn btn-danger' name='idExcluir' value='" . $produto['ID'] . "'><i class='fas fa-trash'></i></button></td>";
+            echo "</tr>";
         }
-    } 
-    /*
-    else {
-        echo "<script>
-        alert('Nenhum produto encontrado.');
-        window.history.go(-1);
-    </script>";
+
+        echo "</tbody>";
+        echo "</table>";
+        echo "</form>";
+
+        if (isset($_POST["idExcluir"])) {
+            $idExcluir = $_POST["idExcluir"];
+
+            $estadoPrd = $conn->prepare("DELETE FROM PRODUTOS WHERE ID = :idExcluir");
+            $estadoPrd->bindParam(":idExcluir", $idExcluir);
+
+            if ($estadoPrd->execute()) {
+                echo "<script>
+                alert('Produto excluído com sucesso!');
+                window.location.reload();
+                </script>";
+            } else {
+                echo "<script>
+                alert('Erro ao excluir o produto.');
+                </script>";
+            }
+        }
     }
-    */
 }
 
 ?>

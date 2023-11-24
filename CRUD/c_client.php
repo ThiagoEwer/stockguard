@@ -86,26 +86,57 @@ if (isset($_GET["listar"])) {
     $clientes = $estadoCli->fetchAll(PDO::FETCH_ASSOC);
 
     if ($clientes) {
-        echo "<style>";
-        echo "    .cliente-info {";
-        echo "        background-color: #f0f0f0;";
-        echo "        padding: 10px;";
-        echo "        margin-bottom: 10px;";
-        echo "        border: 1px solid #000;";
-        echo "        border-radius: 3px;"; 
-        echo "    }";
-        echo "</style>";
+        echo "<link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css'>";
+        echo "<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css'>";
+    
+        echo "<form method='post'>";
+        echo "<table class='table'>";
+        echo "<thead class='thead-light'>";
+        echo "<tr>";
+        echo "    <th>ID</th>";
+        echo "    <th>CNPJ/CPF</th>";
+        echo "    <th>Razão Social/Nome</th>";
+        echo "    <th>CEP</th>";
+        echo "    <th>Ação</th>";
+        echo "</tr>";
+        echo "</thead>";
+        echo "<tbody>";
     
         foreach ($clientes as $cliente) {
-            // Adicionando a classe 'cliente-info' ao bloco de informações do cliente
-            echo "<div class='cliente-info'>";
-            echo "ID: " . $cliente['ID'] . "<br>";
-            echo "CNPJ/CPF: " . $cliente['CNPJ_CPF'] . "<br>";
-            echo "Razão Social/Nome: " . $cliente['RAZAO_SOCIAL_NOME'] . "<br>";
-            echo "CEP: " . $cliente['CEP'] . "<br>";
-            echo "</div>";
+            echo "<tr>";
+            echo "    <td>" . $cliente['ID'] . "</td>";
+            echo "    <td>" . $cliente['CNPJ_CPF'] . "</td>";
+            echo "    <td>" . $cliente['RAZAO_SOCIAL_NOME'] . "</td>";
+            echo "    <td>" . $cliente['CEP'] . "</td>";
+            echo "    <td><button type='submit' class='btn btn-danger' name='idExcluir' value='" . $cliente['ID'] . "'><i class='fas fa-trash'></i></button></td>";
+            echo "</tr>";
+        }
+    
+        echo "</tbody>";
+        echo "</table>";
+        echo "</form>";
+    
+        if (isset($_POST["idExcluir"])) {
+            $idExcluir = $_POST["idExcluir"];
+    
+            $estadoCli = $conn->prepare("DELETE FROM CLIENTES WHERE ID = :idExcluir");
+            $estadoCli->bindParam(":idExcluir", $idExcluir);
+    
+            if ($estadoCli->execute()) {
+                echo "<script>
+                alert('Cliente excluído com sucesso!');
+                window.location.reload();
+                </script>";
+            } else {
+                echo "<script>
+                alert('Erro ao excluir o cliente!');
+                </script>";
+            }
         }
     }
+
+
+    
     /*
     else {
         echo "<script>
